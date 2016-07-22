@@ -34,8 +34,12 @@
     UIColor *gray = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0];
     self.view.backgroundColor = gray;
     // 自定义导航栏背景颜色
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:27.0/255 green:161.0/255 blue:226.0/255 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:202.0/255 green:88.0/255 blue:66.0/255 alpha:1];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    //取消自动调整
+    
 }
 
 

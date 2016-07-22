@@ -10,18 +10,33 @@
 
 @interface MomentDetailViewController ()
 
+@property (nonatomic,strong) NSDictionary *dictionary;
+
 @end
 
 @implementation MomentDetailViewController
 
+-(MomentDetailViewController *)initWithDictionary:(NSDictionary *)dictionary{
+    
+    self = [super init];
+    self.dictionary = dictionary;
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
-       
-    //正文文字
+    NSString *yearAndMonthAndDay = [self.dictionary objectForKey:@"yearAndMonthAndDay"];
+    NSString *content = [self.dictionary objectForKey:@"content"];
+    
+
+    [self setSingleLineTitle:yearAndMonthAndDay];
+    
+
     //导航栏20 titleLabel44  [UIScreen mainScreen].bounds.size.width-40 即宽度！
     UILabel *contentText =[[UILabel alloc] initWithFrame:CGRectMake(20, 84, [UIScreen mainScreen].bounds.size.width-40, 20)];
-    contentText.text = @"「here we go again」";
+    contentText.text = content;
     contentText.textColor = [UIColor blackColor];
     contentText.font = [UIFont systemFontOfSize:15];
     contentText.textAlignment = NSTextAlignmentLeft;

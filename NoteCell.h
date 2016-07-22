@@ -10,4 +10,10 @@
 
 @interface NoteCell : UITableViewCell
 
++(NoteCell *)prepareCellForTableView:(UITableView *)tableView;
+
+-(void)setContentWithDictionary:(NSDictionary *)dictionary;
+
++(CGFloat)cellHeightFromText:(NSString *)text;
+
 @end
